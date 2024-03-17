@@ -1,0 +1,9 @@
+# Target labels
+ Extra
+ opencv_bgsegm
+ Sample
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/bgsegm/samples/bgfg.cpp
+ Extra
+ opencv_bgsegm
+ Sample

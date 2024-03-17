@@ -1,0 +1,120 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/include/opencv2/cudaoptflow.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/brox.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/farneback.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/nvidiaOpticalFlow.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/pyrlk.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/tvl1flow.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/cuda/farneback.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/cuda/pyrlk.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudaoptflow/src/cuda/tvl1flow.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaoptflow",
+				"Module"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv/build/cvconfig.h"
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv/build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_farneback.cu.o"
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyrlk.cu.o"
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv/build/modules/cudaoptflow/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_tvl1flow.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaoptflow",
+			"Module"
+		],
+		"name" : "opencv_cudaoptflow"
+	}
+}

@@ -1,0 +1,9 @@
+# Target labels
+ Extra
+ opencv_line_descriptor
+ Sample
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/line_descriptor/samples/compute_descriptors.cpp
+ Extra
+ opencv_line_descriptor
+ Sample

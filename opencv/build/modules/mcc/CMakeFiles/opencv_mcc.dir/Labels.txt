@@ -1,0 +1,95 @@
+# Target labels
+ Extra
+ opencv_mcc
+ Module
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/include/opencv2/mcc.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/include/opencv2/mcc/checker_detector.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/include/opencv2/mcc/checker_model.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/bound_min.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/charts.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/checker_detector.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/checker_model.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/common.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/debug.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/graph_cluster.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/mcc.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/wiener_filter.cpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/bound_min.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/charts.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/checker_detector.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/checker_model.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/common.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/debug.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/dictionary.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/graph_cluster.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/precomp.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/src/wiener_filter.hpp
+ Extra
+ opencv_mcc
+ Module
+/root/autodl-tmp/opencv/opencv/build/cvconfig.h
+/root/autodl-tmp/opencv/opencv/build/opencv2/opencv_modules.hpp

@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_mcc
+ AccuracyTest
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/test/test_main.cpp
+ Extra
+ opencv_mcc
+ AccuracyTest
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/test/test_mcc.cpp
+ Extra
+ opencv_mcc
+ AccuracyTest
+/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/test/test_precomp.hpp
+ Extra
+ opencv_mcc
+ AccuracyTest

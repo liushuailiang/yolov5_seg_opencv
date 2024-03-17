@@ -1,0 +1,9 @@
+# Target labels
+ Extra
+ opencv_xphoto
+ Sample
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/xphoto/samples/color_balance.cpp
+ Extra
+ opencv_xphoto
+ Sample

@@ -1,0 +1,19 @@
+# Target labels
+ Extra
+ opencv_dnn_objdetect
+ Module
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/dnn_objdetect/include/opencv2/core_detect.hpp
+ Extra
+ opencv_dnn_objdetect
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/dnn_objdetect/src/core_detect.cpp
+ Extra
+ opencv_dnn_objdetect
+ Module
+/root/autodl-tmp/opencv/opencv_contrib/modules/dnn_objdetect/src/precomp.hpp
+ Extra
+ opencv_dnn_objdetect
+ Module
+/root/autodl-tmp/opencv/opencv/build/cvconfig.h
+/root/autodl-tmp/opencv/opencv/build/opencv2/opencv_modules.hpp

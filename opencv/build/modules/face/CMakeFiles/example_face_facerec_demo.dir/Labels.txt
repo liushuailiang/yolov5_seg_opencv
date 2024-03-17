@@ -1,0 +1,9 @@
+# Target labels
+ Extra
+ opencv_face
+ Sample
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/face/samples/facerec_demo.cpp
+ Extra
+ opencv_face
+ Sample

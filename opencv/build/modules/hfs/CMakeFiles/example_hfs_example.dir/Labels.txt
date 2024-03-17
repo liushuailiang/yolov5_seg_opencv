@@ -1,0 +1,9 @@
+# Target labels
+ Extra
+ opencv_hfs
+ Sample
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/hfs/samples/example.cpp
+ Extra
+ opencv_hfs
+ Sample

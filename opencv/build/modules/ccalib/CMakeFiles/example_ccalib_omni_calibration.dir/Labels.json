@@ -1,0 +1,24 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/ccalib/samples/omni_calibration.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ccalib",
+				"Sample"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_ccalib",
+			"Sample"
+		],
+		"name" : "example_ccalib_omni_calibration"
+	}
+}

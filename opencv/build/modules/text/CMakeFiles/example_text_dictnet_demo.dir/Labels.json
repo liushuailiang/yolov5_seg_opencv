@@ -1,0 +1,24 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/text/samples/dictnet_demo.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_text",
+				"Sample"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_text",
+			"Sample"
+		],
+		"name" : "example_text_dictnet_demo"
+	}
+}

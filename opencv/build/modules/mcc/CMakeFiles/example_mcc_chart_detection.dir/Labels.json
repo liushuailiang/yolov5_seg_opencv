@@ -1,0 +1,24 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/samples/chart_detection.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_mcc",
+				"Sample"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_mcc",
+			"Sample"
+		],
+		"name" : "example_mcc_chart_detection"
+	}
+}

@@ -1,0 +1,9 @@
+# Target labels
+ Extra
+ opencv_text
+ Sample
+# Source files and their labels
+/root/autodl-tmp/opencv/opencv_contrib/modules/text/samples/text_recognition_cnn.cpp
+ Extra
+ opencv_text
+ Sample

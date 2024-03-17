@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudastereo/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudastereo/perf/perf_stereo.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/root/autodl-tmp/opencv/opencv_contrib/modules/cudastereo/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudastereo",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudastereo",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_cudastereo"
+	}
+}
