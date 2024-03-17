@@ -203,7 +203,7 @@ void YOLO::detect(Mat& frame)
 							boxes.push_back(Rect(left, top, (int)w, (int)h));
 							classIds.push_back(class_idx);
 						}
-					}
+					}//nihao
 					row_ind++;
 					pdata += nout;
 				}
