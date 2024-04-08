@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/root/autodl-tmp/opencv/build",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -g -g   -std=gnu++11 -o CMakeFiles/my_yolo.dir/main.cpp.o -c /root/autodl-tmp/opencv/main.cpp",
+  "file": "/root/autodl-tmp/opencv/main.cpp"
+},
+{
+  "directory": "/root/autodl-tmp/opencv/build",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -g -g   -std=gnu++11 -o CMakeFiles/my_yolo.dir/dataloder/dataloder.cpp.o -c /root/autodl-tmp/opencv/dataloder/dataloder.cpp",
+  "file": "/root/autodl-tmp/opencv/dataloder/dataloder.cpp"
+},
+{
+  "directory": "/root/autodl-tmp/opencv/build",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -g -g   -std=gnu++11 -o CMakeFiles/my_yolo.dir/model/yolo.cpp.o -c /root/autodl-tmp/opencv/model/yolo.cpp",
+  "file": "/root/autodl-tmp/opencv/model/yolo.cpp"
+},
+{
+  "directory": "/root/autodl-tmp/opencv/build",
+  "command": "/usr/bin/c++   -isystem /usr/local/include/opencv4  -g -g   -std=gnu++11 -o CMakeFiles/my_yolo.dir/model/resnet.cpp.o -c /root/autodl-tmp/opencv/model/resnet.cpp",
+  "file": "/root/autodl-tmp/opencv/model/resnet.cpp"
+}
+]

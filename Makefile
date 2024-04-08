@@ -177,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/my_yolo.dir/build.make CMakeFiles/my_yolo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+model/resnet.o: model/resnet.cpp.o
+
+.PHONY : model/resnet.o
+
+# target to build an object file
+model/resnet.cpp.o:
+	$(MAKE) -f CMakeFiles/my_yolo.dir/build.make CMakeFiles/my_yolo.dir/model/resnet.cpp.o
+.PHONY : model/resnet.cpp.o
+
+model/resnet.i: model/resnet.cpp.i
+
+.PHONY : model/resnet.i
+
+# target to preprocess a source file
+model/resnet.cpp.i:
+	$(MAKE) -f CMakeFiles/my_yolo.dir/build.make CMakeFiles/my_yolo.dir/model/resnet.cpp.i
+.PHONY : model/resnet.cpp.i
+
+model/resnet.s: model/resnet.cpp.s
+
+.PHONY : model/resnet.s
+
+# target to generate assembly for a file
+model/resnet.cpp.s:
+	$(MAKE) -f CMakeFiles/my_yolo.dir/build.make CMakeFiles/my_yolo.dir/model/resnet.cpp.s
+.PHONY : model/resnet.cpp.s
+
 model/yolo.o: model/yolo.cpp.o
 
 .PHONY : model/yolo.o
@@ -219,6 +246,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... model/resnet.o"
+	@echo "... model/resnet.i"
+	@echo "... model/resnet.s"
 	@echo "... model/yolo.o"
 	@echo "... model/yolo.i"
 	@echo "... model/yolo.s"

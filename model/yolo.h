@@ -5,6 +5,7 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#include "resnet.h"
 // #include "../dataloder/dataloder.h"
 
 using namespace cv;
@@ -25,7 +26,7 @@ class YOLO
 {
 public:
 	YOLO(Net_config config); // 构造函数
-	void detect(Mat& frame); // 推理函数
+	void detect(Mat& frame, ResNet *resnet); // 推理函数
 private:
 	// 一系列模型参数配置
 	float* anchors;
@@ -42,7 +43,7 @@ private:
 	const bool keep_ratio = true;
 	Net net;
 	// 绘制检测结果
-	void drawPred(float conf, int left, int top, int right, int bottom, Mat& frame, int classid);
+	void drawPred(float conf, int left, int top, int right, int bottom, Mat& frame, int classid, int resnet_class);
 	// 输入图像预处理
 	Mat resize_image(Mat srcimg, int *newh, int *neww, int *top, int *left);
 };

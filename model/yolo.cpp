@@ -7,6 +7,7 @@
 #include <opencv2/highgui.hpp>
 // #include "../dataloder/dataloder.h"
 #include "yolo.h"
+#include "resnet.h"
 
 using namespace cv;
 using namespace dnn;
@@ -89,14 +90,14 @@ Mat YOLO::resize_image(Mat srcimg, int *newh, int *neww, int *top, int *left)
 }
 
 // 绘制检测结果
-void YOLO::drawPred(float conf, int left, int top, int right, int bottom, Mat& frame, int classid)   // Draw the predicted bounding box
+void YOLO::drawPred(float conf, int left, int top, int right, int bottom, Mat& frame, int classid, int resnet_class)   // Draw the predicted bounding box
 {
 	//绘制一个红色的矩形框，矩形框的左上角顶点坐标为 (left, top)，右下角顶点坐标为 (right, bottom)，并且线宽为 2 像素。
 	rectangle(frame, Point(left, top), Point(right, bottom), Scalar(0, 0, 255), 2);
 
 	// 写明类别和置信度
 	string label = format("%.2f", conf);
-	label = this->class_names[classid] + ":" + label;
+	label = this->class_names[classid] + ":" + label + to_string(resnet_class);
 
 	//Display the label at the top of the bounding box
 	int baseLine;
@@ -109,7 +110,7 @@ void YOLO::drawPred(float conf, int left, int top, int right, int bottom, Mat& f
 
 
 // 推理函数
-void YOLO::detect(Mat& frame)
+void YOLO::detect(Mat& frame, ResNet *resnet)
 {
 	// 这个传入参数，会在resize_image中被替换成this->inpWidth等参数，并不是输入零
 	int newh = 0, neww = 0, padh = 0, padw = 0;
@@ -118,8 +119,13 @@ void YOLO::detect(Mat& frame)
 	// cout << dstimg.size << dstimg.channels() << endl;
 	// blob.size = 1 x 3 x 640 x 640  dims = 1
 	Mat blob = blobFromImage(dstimg, 1 / 255.0, Size(this->inpWidth, this->inpHeight), Scalar(0, 0, 0), true, false);
-	// Mat blob = blobFromImage(dstimg, 1.0, Size(this->inpWidth, this->inpHeight), Scalar(0, 0, 0), false, false);
-	// cout << blob.size << blob.channels() << endl;
+	// for (int i = 0; i < 5; i++)
+	// 	{
+	// 		for (int j = 0; j < 5; j++)
+	// 		{
+	// 			cout<<"Value is:"<<blob.at<double>(i,j)<<endl;		
+	// 		}
+	// 	}
 	this->net.setInput(blob);
 	vector<Mat> outs;
 	// getUnconnectedOutLayersNames 函数则用于获取需要获取输出的层的名称列表。
@@ -215,11 +221,32 @@ void YOLO::detect(Mat& frame)
 	// lower confidences
 	vector<int> indices;
 	NMSBoxes(boxes, confidences, this->confThreshold, this->nmsThreshold, indices);
+
+	// 在这里添加resnet推理模块
+	// vector<int> resnet_class;
+	// for (size_t j = 0; j < indices.size(); ++j)
+	// {
+	// 	int idx = indices[j];
+	// 	Rect box = boxes[idx];
+	// 	cv::Mat resnet_input = frame(cv::Rect(box.x,box.y,box.width,box.y));
+	// 	int ptr = resnet->forward(resnet_input);
+	// 	resnet_class.push_back(ptr);
+	// }
+
+
+
 	for (size_t i = 0; i < indices.size(); ++i)
 	{
 		int idx = indices[i];
 		Rect box = boxes[idx];
+		int rect_x = box.x;
+		int rect_y = box.y+(box.height/2);
+		int rect_w = box.width*3/4;
+		int rect_h = box.height/2;
+		cv::Rect res(rect_x,rect_y,rect_w,rect_h);
+		cv::Mat resnet_input = frame(res);
+		int ptr = resnet->forward(resnet_input);
 		this->drawPred(confidences[idx], box.x, box.y,
-			box.x + box.width, box.y + box.height, frame, classIds[idx]);
+			box.x + box.width, box.y + box.height, frame, classIds[idx], ptr);
 	}
 }

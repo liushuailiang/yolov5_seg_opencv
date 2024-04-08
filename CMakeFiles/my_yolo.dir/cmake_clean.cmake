@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_yolo.dir/main.cpp.o"
   "CMakeFiles/my_yolo.dir/dataloder/dataloder.cpp.o"
   "CMakeFiles/my_yolo.dir/model/yolo.cpp.o"
+  "CMakeFiles/my_yolo.dir/model/resnet.cpp.o"
   "my_yolo.pdb"
   "my_yolo"
 )
