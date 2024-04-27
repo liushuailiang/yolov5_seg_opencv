@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_aruco
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/aruco/samples/tutorial_charuco_create_detect.cpp
- Extra
- opencv_aruco
- Sample

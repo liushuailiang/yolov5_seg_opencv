@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_ximgproc
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/ximgproc/samples/live_demo.cpp
- Extra
- opencv_ximgproc
- Sample

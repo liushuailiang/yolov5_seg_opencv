@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_stereo
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/stereo/samples/dense_disparity.cpp
- Extra
- opencv_stereo
- Sample

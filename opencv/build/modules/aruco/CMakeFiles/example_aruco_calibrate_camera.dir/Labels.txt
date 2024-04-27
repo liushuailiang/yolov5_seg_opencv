@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_aruco
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/aruco/samples/calibrate_camera.cpp
- Extra
- opencv_aruco
- Sample

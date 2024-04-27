@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_shape
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/shape/samples/shape_example.cpp
- Extra
- opencv_shape
- Sample

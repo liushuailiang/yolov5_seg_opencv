@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_xfeatures2d
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/xfeatures2d/samples/surf_matcher.cpp
- Extra
- opencv_xfeatures2d
- Sample

@@ -20,12 +20,32 @@ struct Net_config
 	string modelpath;
 };
 
+struct OutputSeg {
+	int id;         
+	float confidence;
+	cv::Rect box;     
+	cv::Mat boxMask;    
+};
+
+struct MaskParams {
+	//int segChannels = 32;
+	//int segWidth = 160;
+	//int segHeight = 160;
+	int netWidth = 640;
+	int netHeight = 640;
+	float maskThreshold = 0.5;
+	cv::Size srcImgShape;
+	cv::Vec4d params;
+
+};
 
 class YOLO
 {
 public:
 	YOLO(Net_config config); // 构造函数
-	void detect(Mat& frame); // 推理函数
+	bool detect(Mat& frame, vector<OutputSeg>& output); // 推理函数
+	std::vector<std::string> _className = {"container", "level"};
+
 private:
 	// 一系列模型参数配置
 	float* anchors;
@@ -41,8 +61,6 @@ private:
 	float objThreshold;
 	const bool keep_ratio = true;
 	Net net;
-	// 绘制检测结果
-	void drawPred(float conf, int left, int top, int right, int bottom, Mat& frame, int classid);
 	// 输入图像预处理
 	Mat resize_image(Mat srcimg, int *newh, int *neww, int *top, int *left);
 };

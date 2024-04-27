@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_mcc
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/mcc/samples/chart_detection.cpp
- Extra
- opencv_mcc
- Sample

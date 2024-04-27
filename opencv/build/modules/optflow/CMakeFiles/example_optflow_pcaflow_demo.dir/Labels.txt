@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_optflow
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/optflow/samples/pcaflow_demo.cpp
- Extra
- opencv_optflow
- Sample

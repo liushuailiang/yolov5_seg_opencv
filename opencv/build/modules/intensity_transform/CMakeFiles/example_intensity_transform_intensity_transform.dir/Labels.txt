@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_intensity_transform
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/intensity_transform/samples/intensity_transform.cpp
- Extra
- opencv_intensity_transform
- Sample

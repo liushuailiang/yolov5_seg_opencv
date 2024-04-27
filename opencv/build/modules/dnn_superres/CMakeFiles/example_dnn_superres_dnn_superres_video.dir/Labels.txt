@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_dnn_superres
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/dnn_superres/samples/dnn_superres_video.cpp
- Extra
- opencv_dnn_superres
- Sample

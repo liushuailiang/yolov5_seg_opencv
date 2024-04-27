@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_plot
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/plot/samples/plot_demo.cpp
- Extra
- opencv_plot
- Sample

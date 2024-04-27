@@ -1,9 +1,0 @@
-# Target labels
- Extra
- opencv_img_hash
- Sample
-# Source files and their labels
-/root/autodl-tmp/opencv/opencv_contrib/modules/img_hash/samples/hash_samples.cpp
- Extra
- opencv_img_hash
- Sample
