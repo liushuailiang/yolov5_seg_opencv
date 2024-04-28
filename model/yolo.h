@@ -44,7 +44,7 @@ class YOLO
 public:
 	YOLO(Net_config config); // 构造函数
 	bool detect(Mat& frame, vector<OutputSeg>& output); // 推理函数
-	std::vector<std::string> _className = {"container", "level"};
+	vector<string> class_names;
 
 private:
 	// 一系列模型参数配置
@@ -53,9 +53,8 @@ private:
 	int num_stride;
 	int inpWidth;
 	int inpHeight;
-	vector<string> class_names;
-	int num_class;
 	
+	int num_class;
 	float confThreshold;
 	float nmsThreshold;
 	float objThreshold;

@@ -7,6 +7,7 @@
 #include <opencv2/highgui.hpp>
 #include "dataloder/dataloder.h"
 #include "model/yolo.h"
+#include "am.h"
 
 using namespace cv;
 using namespace dnn;
@@ -35,11 +36,14 @@ void DrawPred(Mat& img, vector<OutputSeg> result, std::vector<std::string> class
 
 
 int main()
-{
-	Net_config yolo_nets = { 0.3, 0.5, 0.3, "/root/autodl-tmp/opencv/weights/seg_best.onnx" };
-	YOLO yolo_model(yolo_nets);
-	string imgpath = "images/car.mp4";
-	dataLoader dataLoader(imgpath);
+{	
+    string source = "images/car.mp4";
+    string output_path = "/root/autodl-tmp/opencv/output/car/frame_";
+    string class_name_file = "class.names";
+    Net_config olo_conf = { 0.3, 0.5, 0.3, "/root/autodl-tmp/opencv/weights/seg_best.onnx" };
+	args::get_instance()->init(source, output_path, class_name_file, olo_conf);
+	YOLO yolo_model(args::get_instance()->m_yolo_conf);
+	dataLoader dataLoader(args::get_instance()->m_source);
 	int frame_count = 0;
 	vector<Scalar> color;
 	srand(time(0));
@@ -57,11 +61,11 @@ int main()
 		if (srcimg.empty())  // 检查是否读取到了新的帧
             break;  // 如果未读取到新的帧，跳出循环
 		yolo_model.detect(srcimg, result);
-		if (yolo_model.detect(srcimg, result)) 
+		if (yolo_model.detect(srcimg, result))
 		{
-			DrawPred(srcimg, result, yolo_model._className, color, isVideo);
+			DrawPred(srcimg, result, yolo_model.className, color, isVideo);
 		}
-		string output_filename = "/root/autodl-tmp/opencv/output/car/frame_" + to_string(frame_count) + ".jpg";
+		string output_filename = args::get_instance()->m_output_path + "/frame_" + to_string(frame_count) + ".jpg";
 		imwrite(output_filename, srcimg);
 		++frame_count;
 		// 输出保存结果信息

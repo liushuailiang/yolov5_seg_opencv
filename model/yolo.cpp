@@ -7,6 +7,7 @@
 #include <opencv2/highgui.hpp>
 // #include "../dataloder/dataloder.h"
 #include "yolo.h"
+#include "am.h"
 
 using namespace cv;
 using namespace dnn;
@@ -23,7 +24,7 @@ YOLO::YOLO(Net_config config)
 	this->objThreshold = config.objThreshold;
 	this->net = cv::dnn::readNetFromONNX(config.modelpath);
 	// 打开文件class.names，取出所有类别名称及数量
-	ifstream ifs("class.names");
+	ifstream ifs(args::get_instance()->m_class_name_file);
 	string line;
 	while (getline(ifs, line)) this->class_names.push_back(line);
 	this->num_class = class_names.size();
@@ -65,58 +66,6 @@ Mat YOLO::resize_image(Mat srcimg, int *newh, int *neww, int *top, int *left)
 	return dstimg;
 }
 
-
-// vector<float> mat2vector(cv::Mat img, cv::Size2d size = {512,512}) {
-// 	cv::resize(img, img, size);
-// 	cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
-// 	img.convertTo(img, CV_32FC3);
-// 	//数据归一化
-// 	img = img / 255.0;
-// 	//将rgb数据分离为单通道
-// 	std::vector<cv::Mat> mv;
-// 	cv::split(img, mv);
-// 	std::vector<float> d1 = mv[0].reshape(1, 1);
-// 	std::vector<float> d2 = mv[1].reshape(1, 1);
-// 	std::vector<float> d3 = mv[2].reshape(1, 1);
-// 	std::vector<float> d4 = mv[3].reshape(1, 1);
-// 	//RGB数据合并
-// 	std::vector<float> input_data;
-// 	input_data.insert(input_data.end(), d1.begin(), d1.end());
-// 	input_data.insert(input_data.end(), d2.begin(), d2.end());
-// 	input_data.insert(input_data.end(), d3.begin(), d3.end());
-// 	input_data.insert(input_data.end(), d4.begin(), d4.end());
-// 	return input_data;
-// }
-
-// cv::Mat vector2mat(vector<float> output)
-// {
-// 	cv::Size2d size = {32, 1};
-// 	cv::Mat out_result(size.height, size.width, CV_32FC1, cv::Scalar(0));
-// 	memcpy(out_result.data, output.data(), output.size() * sizeof(float));
-// 	//output.assign((float*)out_result.datastart, (float*)out_result.dataend);
-// 	return out_result;
-// }
-
-// Mat upsampleMask(const Mat& mask, const Size& targetSize) {
-//     Mat upsampledMask;
-//     resize(mask, upsampledMask, targetSize, 0, 0, INTER_LINEAR);
-//     return upsampledMask;
-// }
-// Mat cropAndThreshold(const Mat& mask, const Rect& box, float thresholdVal) {
-//     Mat croppedMask = Mat::zeros(mask.size(), CV_32F);
-//     mask(box).copyTo(croppedMask(box));
-//     threshold(croppedMask, croppedMask, thresholdVal, 1, THRESH_BINARY);
-//     return croppedMask;
-// }
-
-// Mat get_mask(Mat mask, Rect point)
-// {
-// 	Size targetSize(640, 640);
-//     Mat upsampledMask = upsampleMask(mask, targetSize);
-// 	Mat croppedBinaryMask = cropAndThreshold(upsampledMask, point, 0.5);
-// }
-
-// LetterBox(frame, netInputImg, params, cv::Size(inpWidth, inpHeight));
 void LetterBox(const cv::Mat& image, cv::Mat& outImage, cv::Vec4d& params, const cv::Size& newShape, 
 	bool autoShape = false,
 	bool scaleFill = false,
@@ -264,8 +213,6 @@ bool YOLO::detect(Mat& frame, vector<OutputSeg>& output)
 	// this->net.forward(net_output_img, this->net.getUnconnectedOutLayersNames());
 	vector<string> output_layer_names{ "output0","output1" };
 	net.forward(net_output_img, output_layer_names); //获取output的输出
-
-
 
 	
 	std::vector<int> class_ids;//结果id数组
