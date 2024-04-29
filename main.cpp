@@ -7,7 +7,7 @@
 #include <opencv2/highgui.hpp>
 #include "dataloder/dataloder.h"
 #include "model/yolo.h"
-#include "am.h"
+#include "AM/AM.h"
 
 using namespace cv;
 using namespace dnn;
@@ -37,9 +37,9 @@ void DrawPred(Mat& img, vector<OutputSeg> result, std::vector<std::string> class
 
 int main()
 {	
-    string source = "images/car.mp4";
+    string source = "/root/autodl-tmp/opencv/images/car.mp4";
     string output_path = "/root/autodl-tmp/opencv/output/car";
-    string class_name_file = "class.names";
+    string class_name_file = "/root/autodl-tmp/opencv/yolov5_seg_opencv/class.names";
     Net_config olo_conf = { 0.3, 0.5, 0.3, "/root/autodl-tmp/opencv/weights/seg_best.onnx" };
 	args* params_manager = args::get_instance();
 	params_manager->init(source, output_path, class_name_file, olo_conf);
@@ -64,7 +64,7 @@ int main()
 		yolo_model.detect(srcimg, result);
 		if (yolo_model.detect(srcimg, result))
 		{
-			DrawPred(srcimg, result, yolo_model.className, color, isVideo);
+			DrawPred(srcimg, result, yolo_model.class_names, color, isVideo);
 		}
 		string output_filename = args::get_instance()->m_output_path + "/frame_" + to_string(frame_count) + ".jpg";
 		imwrite(output_filename, srcimg);

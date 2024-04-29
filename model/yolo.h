@@ -6,19 +6,12 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 // #include "../dataloder/dataloder.h"
+#include "../AM/AM.h"
 
 using namespace cv;
 using namespace dnn;
 using namespace std;
 
-// 阈值设置
-struct Net_config
-{
-	float confThreshold; // 置信度阈值
-	float nmsThreshold;  // NMS阈值
-	float objThreshold;  // 目标置信度阈值
-	string modelpath;
-};
 
 struct OutputSeg {
 	int id;         

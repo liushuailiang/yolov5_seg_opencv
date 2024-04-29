@@ -7,7 +7,7 @@
 #include <opencv2/highgui.hpp>
 // #include "../dataloder/dataloder.h"
 #include "yolo.h"
-#include "am.h"
+#include "../AM/AM.h"
 
 using namespace cv;
 using namespace dnn;
