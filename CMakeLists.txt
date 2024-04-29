@@ -22,7 +22,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 
 # Declare the executable target built from your sources
 # add_executable(my_yolo main.cpp)
-add_executable(my_yolo main.cpp dataloder/dataloder.cpp model/yolo.cpp)
+add_executable(my_yolo main.cpp dataloder/dataloder.cpp model/yolo.cpp AM/AM.cpp)
 # add_executable(my_yolo main.cpp dataloder/dataloder.cpp)
 
 

@@ -38,12 +38,13 @@ void DrawPred(Mat& img, vector<OutputSeg> result, std::vector<std::string> class
 int main()
 {	
     string source = "images/car.mp4";
-    string output_path = "/root/autodl-tmp/opencv/output/car/frame_";
+    string output_path = "/root/autodl-tmp/opencv/output/car";
     string class_name_file = "class.names";
     Net_config olo_conf = { 0.3, 0.5, 0.3, "/root/autodl-tmp/opencv/weights/seg_best.onnx" };
-	args::get_instance()->init(source, output_path, class_name_file, olo_conf);
-	YOLO yolo_model(args::get_instance()->m_yolo_conf);
-	dataLoader dataLoader(args::get_instance()->m_source);
+	args* params_manager = args::get_instance();
+	params_manager->init(source, output_path, class_name_file, olo_conf);
+	YOLO yolo_model(params_manager->m_yolo_conf);
+	dataLoader dataLoader(params_manager->m_source);
 	int frame_count = 0;
 	vector<Scalar> color;
 	srand(time(0));

@@ -19,12 +19,13 @@ using namespace std;
 // 构造函数
 YOLO::YOLO(Net_config config)
 {
+	args* params_manager = args::get_instance();
 	this->confThreshold = config.confThreshold;
 	this->nmsThreshold = config.nmsThreshold;
 	this->objThreshold = config.objThreshold;
 	this->net = cv::dnn::readNetFromONNX(config.modelpath);
 	// 打开文件class.names，取出所有类别名称及数量
-	ifstream ifs(args::get_instance()->m_class_name_file);
+	ifstream ifs(params_manager->m_class_name_file);
 	string line;
 	while (getline(ifs, line)) this->class_names.push_back(line);
 	this->num_class = class_names.size();
@@ -132,6 +133,7 @@ void LetterBox(const cv::Mat& image, cv::Mat& outImage, cv::Vec4d& params, const
 	cv::copyMakeBorder(outImage, outImage, top, bottom, left, right, cv::BORDER_CONSTANT, color);
 }
 
+// GetMask2(Mat(temp_mask_proposals[i]).t(), net_output_img[1], output[i], mask_params);
 void GetMask2(const Mat& maskProposals, const Mat& maskProtos, OutputSeg& output, const MaskParams& maskParams) {
 	int net_width = maskParams.netWidth;
 	int net_height = maskParams.netHeight;
@@ -278,18 +280,6 @@ bool YOLO::detect(Mat& frame, vector<OutputSeg>& output)
 	for (int i = 0; i < temp_mask_proposals.size(); ++i) {
 		GetMask2(Mat(temp_mask_proposals[i]).t(), net_output_img[1], output[i], mask_params);
 	}
-
-
-	//******************** ****************
-	// 老版本的方案，如果上面GetMask2出错，建议使用这个。
-	// If the GetMask2() still reports errors , it is recommended to use GetMask().
-	//Mat mask_proposals;
-	//for (int i = 0; i < temp_mask_proposals.size(); ++i) {
-	//	mask_proposals.push_back(Mat(temp_mask_proposals[i]).t());
-	//}
-	//GetMask(mask_proposals, net_output_img[1], output, mask_params);
-	//*****************************************************/
-
 
 	if (output.size())
 		return true;
